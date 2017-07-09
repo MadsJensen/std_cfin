@@ -3,7 +3,7 @@ if [ $# == 2 ]
   then
     for sub in $(<subjects.txt)
     do
-        eval submit_to_cluster -q $2 \"python $1 $sub\"
+        eval submit_to_cluster -q $2 -n 2 \"python $1 $sub\"
     done
 
 elif [ $# == 3 ]
@@ -23,7 +23,7 @@ elif [ $# == 4 ]
 else
     for sub in $(<subjects.txt)
     do
-        eval submit_to_cluster \"python $1 $sub\"
+        eval submit_to_cluster -n 2 \"python $1 $sub\"
     done
 
 fi
