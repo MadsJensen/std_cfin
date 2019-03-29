@@ -17,7 +17,7 @@ elif [ $# == 4 ]
   then
     for sub in $(<subjects.txt)
     do
-        eval submit_to_cluster -q $2 -n $3  \"python $1 $sub $5\"
+        eval submit_to_cluster -q $2 -n $3  \"python $1 $sub $4\"
     done
 
 else
