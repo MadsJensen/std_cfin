@@ -1,18 +1,18 @@
-if [ $# == 2 ]
+if [ $# == 3 ]
   then
     for sub in $(<$2)
     do
         eval submit_to_cluster -q $3 -n 2 \"python $1 $sub\"
     done
 
-elif [ $# == 3 ]
+elif [ $# == 4 ]
   then
     for sub in $(<$2)
     do
         eval submit_to_cluster -q $3 -n $4  \"python $1 $sub\"
     done
 
-elif [ $# == 4 ]
+elif [ $# == 5 ]
   then
     for sub in $(<$2)
     do
