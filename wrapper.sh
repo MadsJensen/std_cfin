@@ -19,6 +19,13 @@ elif [ $# == 5 ]
         eval submit_to_cluster -q $3 -n $4  \"python $1 $sub $5\"
     done
 
+elif [ $# == 6 ]
+  then
+    for sub in $(<$2)
+    do
+        eval submit_to_cluster -q $3 -n $4  \"python $1 $sub $5 $6\"
+    done
+    
 else
     for sub in $(<$2)
     do
