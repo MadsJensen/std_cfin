@@ -1,13 +1,8 @@
 import os
-from slackclient import SlackClient
+from slack_sdk import WebClient
 
-sc = SlackClient(os.environ.get('SLACK_TOKEN'))
-channel = "python_notes"
+client = WebClient(token=os.environ.get("SLACK_TOKEN"))
 
 
-def send_slack(string_to_send, channel=channel):
-    sc.api_call(
-        "chat.postMessage",
-        channel=channel,
-        text=string_to_send,
-    )
+def send_slack(channel, text):
+    client.chat_postMessage(channel=channel, text=text)
